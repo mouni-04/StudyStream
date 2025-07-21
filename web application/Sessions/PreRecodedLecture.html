@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Classroom - EduReach</title>
+    <link rel="stylesheet" href="headerfooter.css">
+    <style>
+        .lecture-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .lecture-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .video-card {
+            width: 360px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 215px;
+        }
+
+        @media (max-width: 768px) {
+            .video-card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header id="header">
+        <nav>
+            <div class="logo"><a href="/StudyStream/Web Application/index.html"><img src="images/icon/logo.png" alt="logo"></a></div>
+            <ul>
+                <li><a href="/StudyStream/Web Application/Sessions/Live_Sessions.html">Live Sessions</a></li>
+                <li><a href="/StudyStream/Web Application/Sessions/RecordedSessons.html">Recorded Sessions</a></li>
+                <li><a href="/StudyStream/Web Application/Sessions/PreRecodedLecture.html" class="active">Pre Recorded Lectures</a></li>
+                <li><a href="/StudyStream/Web Application/Sessions/notes.html">Notes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Pre-recorded Lectures Section -->
+    <section class="lecture-section">
+        <h2>Pre-recorded Lectures</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/6v2L2UGZJAM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/1hHMwLxN6EM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/kKKM8Y-u7ds" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <a href="/StudyStream/Web Application/index.html"><img src="images/icon/logo.png" style="width: 200px;"></a>
+                <div class="logo"></div>
+                <div class="social-media">
+                    <a href="#"><img src="images/icon/fb.png"></a>
+                    <a href="#"><img src="images/icon/insta.png"></a>
+                    <a href="#"><img src="images/icon/tt.png"></a>
+                    <a href="#"><img src="images/icon/ytube.png"></a>
+                    <a href="#"><img src="images/icon/linkedin.png"></a>
+                </div><br><br>
+                <p class="rights-text">Copyright © 2025 Developed by StudyStream. All Rights Reserved.</p>
+                <br>
+                <p><img src="images/icon/location.png"> AndhraPradesh, India<br> </p>
+                <br>
+                <p><img src="images/icon/phone.png"> +91-1234-567-890<br><img src="images/icon/mail.png">&nbsp;
+                    info@StudyStream.com</p>
+            </div>
+            <div class="right-col">
+                <h1 style="color: #fff">Our Newsletter</h1>
+                <div class="border"></div><br>
+                <p>Enter Your Email to get our News and updates.</p>
+                <form class="newsletter-form">
+                    <input class="txtb" type="email" placeholder="Enter Your Email">
+                    <input class="btn" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

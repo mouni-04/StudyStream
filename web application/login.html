@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="image/png" href="images/icon/favicon.png">
+	<title>Login SignUp</title>
+	<link rel="stylesheet" type="text/css" href="loginStyle.css">
+	<style>
+		#btnSubmit:disabled {
+			cursor: not-allowed;
+		}
+	</style>
+</head>
+<body>
+	<div class="form-box">
+		<div class="button-box">
+			<div id="btn"></div>
+			<button type="button" class="toggle-btn" id="log" onclick="login()" style="color: #fff;">Log In</button>
+			<button type="button" class="toggle-btn" id="reg" onclick="register()">Register</button>
+		</div>
+
+		<div class="social-icons">
+			<img src="images/icon/fb2.png">
+			<img src="images/icon/insta2.png">
+			<img src="images/icon/tt2.png">
+		</div>
+
+		<!-- Login Form -->
+		<form id="login" class="input-group" action="login.php" method="POST">
+			<div class="inp">
+				<img src="images/icon/user.png">
+				<input type="text" name="email" class="input-field" placeholder="Username or Phone Number" style="width: 88%; border:none;" required>
+			</div>
+			<div class="inp">
+				<img src="images/icon/password.png">
+				<input type="password" name="password" class="input-field" placeholder="Password" style="width: 88%; border: none;" required>
+			</div>
+			<input type="checkbox" class="check-box">Remember Password
+			<button type="submit" class="submit-btn">Log In</button>
+		</form>
+
+		<div class="other" id="other">
+			<div class="instead">
+				<h3>or</h3>
+			</div>
+			<button class="connect" onclick="google()">
+				<img src="images/icon/google.png"><span>Sign in with Google</span>
+			</button>
+		</div>
+
+		<!-- Registration Form -->
+		<form id="register" class="input-group" action="register.php" method="POST">
+			<input type="text" name="fullname" class="input-field" placeholder="Full Name" required>
+			<input type="email" name="email" class="input-field" placeholder="Email Address" required>
+			<input type="password" name="password" class="input-field" placeholder="Create Password" required>
+			<input type="password" name="confirm_password" class="input-field" placeholder="Confirm Password" required>
+			
+			<input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()" required>
+			I agree to the Terms & Conditions
+
+			<button type="submit" class="submit-btn reg-btn" id="btnSubmit" disabled>Register</button>
+		</form>
+	</div>
+
+	<!-- JavaScript -->
+	<script>
+		var x = document.getElementById("login");
+		var y = document.getElementById("register");
+		var z = document.getElementById("btn");
+		var a = document.getElementById("log");
+		var b = document.getElementById("reg");
+		var w = document.getElementById("other");
+
+		function register() {
+			x.style.left = "-400px";
+			y.style.left = "50px";
+			z.style.left = "110px";
+			w.style.visibility = "hidden";
+			b.style.color = "#fff";
+			a.style.color = "#000";
+		}
+
+		function login() {
+			x.style.left = "50px";
+			y.style.left = "450px";
+			z.style.left = "0px";
+			w.style.visibility = "visible";
+			a.style.color = "#fff";
+			b.style.color = "#000";
+		}
+
+		function google() {
+			window.open("https://accounts.google.com/", "_blank");
+		}
+
+		// 🔥 Add checkbox-to-button color logic here
+		function goFurther() {
+			const checkbox = document.getElementById("chkAgree");
+			const button = document.getElementById("btnSubmit");
+
+			if (checkbox.checked) {
+				button.style.setProperty("background", "linear-gradient(to right, #FA4B37, #DF2771)", "important");
+				button.disabled = false;
+			} else {
+				button.style.setProperty("background", "lightgray", "important");
+				button.disabled = true;
+			}
+		}
+	</script>
+</body>
+</html>
